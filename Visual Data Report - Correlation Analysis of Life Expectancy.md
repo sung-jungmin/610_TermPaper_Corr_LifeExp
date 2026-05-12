@@ -1,3 +1,8 @@
+---
+layout: default
+title: Correlation Analysis of Life Expectancy
+---
+
 # Correlation Analysis of Life Expectancy and Global Health Indicators
 
 **A Visual Data Report Based on WHO World Health Statistics 2020 (Reference Year: 2015)**

@@ -1,3 +1,8 @@
+---
+layout: default
+title: Follow-up Analyses
+---
+
 # Follow-up Analyses to "Correlation Analysis of Life Expectancy and Global Health Indicators"
 
 **Companion to the primary visual data report, addressing the three follow-up studies proposed in §5.**

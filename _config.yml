@@ -1,0 +1,23 @@
+title: Life Expectancy & Global Health
+description: >
+  Cross-country correlation analysis of 24 WHO health indicators against
+  country-level life expectancy. 2015 reference year, 183 countries.
+theme: jekyll-theme-cayman
+markdown: kramdown
+plugins:
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: false
+include:
+  - README.md
+exclude:
+  - csv_data
+  - csv_clean
+  - followup_results
+  - kaggle_who_data.zip
+  - run_notebook.py
+  - verify_paper.py
+  - followup_analyses.py
+  - make_dashboard.py
+  - DTSC610 Term Project - Correlation Analysis of Life Expectancy and Different Variables.ipynb

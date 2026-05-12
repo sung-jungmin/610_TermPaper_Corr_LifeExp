@@ -1,3 +1,8 @@
+---
+layout: default
+title: Executive Summary
+---
+
 # Life Expectancy & Global Health — Executive Summary
 
 A one-page take on the cross-country correlation analysis of life expectancy and 24 WHO health indicators (2015, 183 countries).
