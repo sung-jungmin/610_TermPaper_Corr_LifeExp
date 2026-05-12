@@ -6,10 +6,19 @@ A visual data report revisiting a December 2021 DTSC 610 term project, with foll
 
 ---
 
-## What's in this repository
+## Start here
+
+| | |
+|---|---|
+| ⏱ **One-page read** | [Executive Summary](Executive%20Summary.md) — the findings on a single page with the headline figures. |
+| 🖱 **Interactive view** | [Interactive Dashboard](dashboard.html) — choropleth, country-level explorer, longitudinal heatmap. Best viewed via GitHub Pages or by downloading and opening locally. |
+
+## All documents
 
 | Document | What it is |
 |---|---|
+| [Executive Summary.md](Executive%20Summary.md) | **One-page summary.** Headline findings + 3 follow-up takeaways with figures. ~600 words. |
+| [dashboard.html](dashboard.html) | **Interactive Plotly dashboard.** Six sections — world map, correlation ranking, country-level explorer with dropdown, Pearson vs Spearman, longitudinal heatmap, handwashing multivariate. Self-contained HTML (~300 KB). |
 | [Visual Data Report - Correlation Analysis of Life Expectancy.md](Visual%20Data%20Report%20-%20Correlation%20Analysis%20of%20Life%20Expectancy.md) | **Primary report.** Restructured term-project analysis: 24 health indicators, pairwise Pearson correlation against country-level life expectancy in 2015. Identifies 9 strong correlates (\|r\| ≥ 0.70). |
 | [Visual Data Report - Followup Analyses.md](Visual%20Data%20Report%20-%20Followup%20Analyses.md) | **Companion follow-up report.** Implements the three extensions proposed in §5 of the primary report: Spearman / LOWESS sensitivity, longitudinal extension to 2000–2019, and handwashing multivariate regression with World Bank covariates. |
 | [610 Presentation Slides.pdf](610%20Presentation%20Slides.pdf) | Original 12-slide deck from the 2021 submission. |
@@ -52,13 +61,16 @@ Nine of 24 health indicators show strong cross-country correlations with life ex
 ```
 .
 ├── README.md                                        ← you are here
+├── Executive Summary.md                             one-page visual summary
+├── dashboard.html                                   interactive Plotly dashboard (self-contained)
 ├── Visual Data Report - Correlation Analysis of Life Expectancy.md
 ├── Visual Data Report - Followup Analyses.md
 ├── 610 Presentation Slides.pdf                      original 2021 deck
 ├── DTSC610 Term Project - … .ipynb                  original notebook (patched)
 │
-├── verify_paper.py                                  re-derives csv_clean/ from raw, diffs vs paper
+├── verify_paper.py                                  re-derives csv_clean/ from raw, diffs vs report
 ├── followup_analyses.py                             produces figures/ and followup_results/
+├── make_dashboard.py                                produces dashboard.html from the cleaned data
 ├── run_notebook.py                                  helper to re-execute the notebook end-to-end
 │
 ├── csv_data/                                        39 raw WHO CSVs from Kaggle (2026-05-12 dump)
@@ -74,14 +86,17 @@ World Health Statistics 2020 (WHO), accessed via the Kaggle compilation [`utkars
 ## Reproduce
 
 ```bash
-# Python 3.12+, pandas, numpy, seaborn, matplotlib, statsmodels, scipy
-pip install pandas numpy seaborn matplotlib statsmodels scipy
+# Python 3.12+, pandas, numpy, seaborn, matplotlib, statsmodels, scipy, plotly
+pip install pandas numpy seaborn matplotlib statsmodels scipy plotly
 
 # Re-derive csv_clean/ from csv_data/ and verify the report's correlation table
 python verify_paper.py
 
 # Run the three follow-up analyses and produce figures/ + followup_results/
 python followup_analyses.py
+
+# Rebuild dashboard.html (uses csv_data/ directly + World Bank API)
+python make_dashboard.py
 
 # Re-execute the original notebook end-to-end (uses csv_clean/)
 python run_notebook.py
