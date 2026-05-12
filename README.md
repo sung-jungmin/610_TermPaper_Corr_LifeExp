@@ -1,6 +1,6 @@
 # Correlation Analysis of Life Expectancy and Global Health Indicators
 
-A short-paper revision of a December 2021 DTSC 610 term project, with follow-up analyses run in May 2026 to answer the questions the original paper raised.
+A visual data report revisiting a December 2021 DTSC 610 term project, with follow-up analyses run in May 2026 to answer the questions the original analysis raised.
 
 **Author:** Jungmin Sung &nbsp;·&nbsp; **Course:** DTSC 610 M01 (Term Project, 2021-12-15) &nbsp;·&nbsp; **Revised:** 2026-05-12
 
@@ -10,8 +10,8 @@ A short-paper revision of a December 2021 DTSC 610 term project, with follow-up 
 
 | Document | What it is |
 |---|---|
-| [Short Paper - Correlation Analysis of Life Expectancy.md](Short%20Paper%20-%20Correlation%20Analysis%20of%20Life%20Expectancy.md) | **Primary short paper.** Restructured term-project analysis: 24 health indicators, pairwise Pearson correlation against country-level life expectancy in 2015. Identifies 9 strong correlates (\|r\| ≥ 0.70). |
-| [Short Paper - Followup Analyses.md](Short%20Paper%20-%20Followup%20Analyses.md) | **Companion follow-up paper.** Implements the three extensions proposed in §5 of the primary paper: Spearman / LOWESS sensitivity, longitudinal extension to 2000–2019, and handwashing multivariate regression with World Bank covariates. |
+| [Visual Data Report - Correlation Analysis of Life Expectancy.md](Visual%20Data%20Report%20-%20Correlation%20Analysis%20of%20Life%20Expectancy.md) | **Primary report.** Restructured term-project analysis: 24 health indicators, pairwise Pearson correlation against country-level life expectancy in 2015. Identifies 9 strong correlates (\|r\| ≥ 0.70). |
+| [Visual Data Report - Followup Analyses.md](Visual%20Data%20Report%20-%20Followup%20Analyses.md) | **Companion follow-up report.** Implements the three extensions proposed in §5 of the primary report: Spearman / LOWESS sensitivity, longitudinal extension to 2000–2019, and handwashing multivariate regression with World Bank covariates. |
 | [610 Presentation Slides.pdf](610%20Presentation%20Slides.pdf) | Original 12-slide deck from the 2021 submission. |
 | [DTSC610 Term Project - Correlation Analysis ... .ipynb](DTSC610%20Term%20Project%20-%20Correlation%20Analysis%20of%20Life%20Expectancy%20and%20Different%20Variables.ipynb) | Original analysis notebook, patched in May 2026 to run against the current raw Kaggle CSV layout and pandas 3.x. |
 
@@ -52,8 +52,8 @@ Nine of 24 health indicators show strong cross-country correlations with life ex
 ```
 .
 ├── README.md                                        ← you are here
-├── Short Paper - Correlation Analysis of Life Expectancy.md
-├── Short Paper - Followup Analyses.md
+├── Visual Data Report - Correlation Analysis of Life Expectancy.md
+├── Visual Data Report - Followup Analyses.md
 ├── 610 Presentation Slides.pdf                      original 2021 deck
 ├── DTSC610 Term Project - … .ipynb                  original notebook (patched)
 │
@@ -63,7 +63,7 @@ Nine of 24 health indicators show strong cross-country correlations with life ex
 │
 ├── csv_data/                                        39 raw WHO CSVs from Kaggle (2026-05-12 dump)
 ├── csv_clean/                                       26 cleaned 2015 Both-sexes 2-column tables
-├── figures/                                         5 PNG figures for the papers and this README
+├── figures/                                         5 PNG figures for the reports and this README
 └── followup_results/                                tab-separated numerical results from the follow-ups
 ```
 
@@ -77,7 +77,7 @@ World Health Statistics 2020 (WHO), accessed via the Kaggle compilation [`utkars
 # Python 3.12+, pandas, numpy, seaborn, matplotlib, statsmodels, scipy
 pip install pandas numpy seaborn matplotlib statsmodels scipy
 
-# Re-derive csv_clean/ from csv_data/ and verify the paper's correlation table
+# Re-derive csv_clean/ from csv_data/ and verify the report's correlation table
 python verify_paper.py
 
 # Run the three follow-up analyses and produce figures/ + followup_results/
@@ -91,6 +91,6 @@ In the May 2026 re-execution, 23 of the 24 pairwise Pearson coefficients reprodu
 
 ## Notes for readers
 
-- The papers are deliberately **short** — the primary paper is ~2,500 words, the follow-up ~3,000 — and meant to be read end-to-end.
-- Correlation is not causation. Both papers are deliberate about this. The strong correlates are framed as candidates for follow-up under confounder-adjusted or longitudinal designs, not as causal claims.
+- Both reports are deliberately **short** — the primary report is ~2,500 words, the follow-up ~3,000 — and meant to be read end-to-end.
+- Correlation is not causation. Both reports are deliberate about this. The strong correlates are framed as candidates for follow-up under confounder-adjusted or longitudinal designs, not as causal claims.
 - This repository is part of a personal portfolio of polished past academic work. Comments and corrections welcome via Issues.

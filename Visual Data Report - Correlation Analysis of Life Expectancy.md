@@ -1,6 +1,6 @@
 # Correlation Analysis of Life Expectancy and Global Health Indicators
 
-**A Short Paper Based on WHO World Health Statistics 2020 (Reference Year: 2015)**
+**A Visual Data Report Based on WHO World Health Statistics 2020 (Reference Year: 2015)**
 
 | | |
 |---|---|
@@ -12,7 +12,7 @@
 
 ## Abstract
 
-Life expectancy at birth is a composite summary of population health, and identifying its strongest cross-country correlates is a useful first step toward causal investigation. This short paper performs a cross-sectional Pearson correlation analysis of life expectancy against 24 health indicators from the WHO *World Health Statistics 2020* dataset, using country-level values for the reference year 2015. Two complementary strategies are compared: (i) **grouped** analysis, in which related indicators are merged on country before computing correlations, and (ii) **pairwise** analysis, in which each indicator is correlated with life expectancy on its own complete-case sample. The pairwise design preserves substantially more observations (up to 183 countries) than the grouped design (as few as 18). At the pre-specified threshold of |r| ≥ 0.70, **nine indicators** show strong correlations: five positive (universal health coverage, basic sanitation, drinking water, clean cooking fuel, basic handwashing facilities) and four negative (neonatal, infant, and under-five mortality; unintentional poisoning mortality). The results motivate three specific follow-up studies, most notably on basic handwashing access — which correlates with life expectancy (r = +0.78) almost as strongly as the Universal Health Coverage index (r = +0.87) despite requiring far less infrastructure investment.
+Life expectancy at birth is a composite summary of population health, and identifying its strongest cross-country correlates is a useful first step toward causal investigation. This visual data report performs a cross-sectional Pearson correlation analysis of life expectancy against 24 health indicators from the WHO *World Health Statistics 2020* dataset, using country-level values for the reference year 2015. Two complementary strategies are compared: (i) **grouped** analysis, in which related indicators are merged on country before computing correlations, and (ii) **pairwise** analysis, in which each indicator is correlated with life expectancy on its own complete-case sample. The pairwise design preserves substantially more observations (up to 183 countries) than the grouped design (as few as 18). At the pre-specified threshold of |r| ≥ 0.70, **nine indicators** show strong correlations: five positive (universal health coverage, basic sanitation, drinking water, clean cooking fuel, basic handwashing facilities) and four negative (neonatal, infant, and under-five mortality; unintentional poisoning mortality). The results motivate three specific follow-up studies, most notably on basic handwashing access — which correlates with life expectancy (r = +0.78) almost as strongly as the Universal Health Coverage index (r = +0.87) despite requiring far less infrastructure investment.
 
 **Keywords:** life expectancy; cross-country correlation; global health indicators; WHO World Health Statistics; SDG-3; Pearson r.
 
@@ -177,7 +177,7 @@ Several limitations should be noted:
 
 ## 5. Conclusion and Future Work
 
-This short paper has revisited a 2021 term project to identify health indicators most strongly correlated with life expectancy at the country level in 2015. Nine indicators meet the pre-specified threshold of |r| ≥ 0.70: five reflect access to basic infrastructure and care (UHC, water, sanitation, clean fuel, handwashing) and four reflect mortality (infant, child, and neonatal mortality, and unintentional poisoning). The pairwise analytical design preserves substantially more observations than the grouped design and yields meaningfully different coefficient estimates for several indicators.
+This visual data report has revisited a 2021 term project to identify health indicators most strongly correlated with life expectancy at the country level in 2015. Nine indicators meet the pre-specified threshold of |r| ≥ 0.70: five reflect access to basic infrastructure and care (UHC, water, sanitation, clean fuel, handwashing) and four reflect mortality (infant, child, and neonatal mortality, and unintentional poisoning). The pairwise analytical design preserves substantially more observations than the grouped design and yields meaningfully different coefficient estimates for several indicators.
 
 Consistent with the original project's intent, these correlations are framed as a starting point rather than a conclusion. Three concrete extensions are proposed:
 
@@ -199,4 +199,4 @@ World Health Organization. (2020). *World Health Statistics 2020: Monitoring hea
 
 ---
 
-*The original term project was submitted for DTSC 610 M01 on December 15, 2021. This short-paper revision restructures the analysis into a standard scientific paper format, expands the discussion of methodology and limitations, and articulates concrete directions for follow-up study. The reported correlation coefficients are the originals from the December 2021 run; an independent re-execution against the current raw Kaggle CSVs in May 2026 reproduces 23 of the 24 pairwise coefficients to six decimal places — see §3.3 for the single HIV revision.*
+*The original term project was submitted for DTSC 610 M01 on December 15, 2021. This visual data report restructures the analysis into a standard scientific format, expands the discussion of methodology and limitations, and articulates concrete directions for follow-up study. The reported correlation coefficients are the originals from the December 2021 run; an independent re-execution against the current raw Kaggle CSVs in May 2026 reproduces 23 of the 24 pairwise coefficients to six decimal places — see §3.3 for the single HIV revision.*

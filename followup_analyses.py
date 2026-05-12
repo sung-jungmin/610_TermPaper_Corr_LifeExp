@@ -1,5 +1,5 @@
 """
-Follow-up analyses for the short paper, §5.
+Follow-up analyses for the visual data report, §5.
 1. Spearman vs Pearson + LOWESS sensitivity for the 9 strong correlates.
 2. Longitudinal extension: pairwise r vs LifeExp for 2000, 2010, 2015, 2019.
 3. Handwashing multivariate regression with World Bank covariates

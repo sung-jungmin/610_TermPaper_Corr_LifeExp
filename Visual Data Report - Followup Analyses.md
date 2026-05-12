@@ -1,18 +1,18 @@
 # Follow-up Analyses to "Correlation Analysis of Life Expectancy and Global Health Indicators"
 
-**Companion to the short paper, addressing the three follow-up studies proposed in §5.**
+**Companion to the primary visual data report, addressing the three follow-up studies proposed in §5.**
 
 | | |
 |---|---|
 | **Author** | Jungmin Sung |
-| **Primary paper** | [Short Paper - Correlation Analysis of Life Expectancy.md](Short%20Paper%20-%20Correlation%20Analysis%20of%20Life%20Expectancy.md) |
+| **Primary report** | [Visual Data Report - Correlation Analysis of Life Expectancy.md](Visual%20Data%20Report%20-%20Correlation%20Analysis%20of%20Life%20Expectancy.md) |
 | **Date** | May 2026 |
 
 ---
 
 ## Abstract
 
-This companion paper implements the three follow-up studies proposed in §5 of the primary short paper. (i) A Spearman / LOWESS sensitivity check confirms that the nine strong Pearson correlates (|r| ≥ 0.70) are robust to the linearity assumption, but flags two indicators — neglected tropical diseases (NTD) and nurses-and-midwives density — whose rank correlations with life expectancy are an order of magnitude larger than their Pearson counterparts, indicating substantial non-linearity that the original screen missed. (ii) Repeating the pairwise correlation analysis at four reference years (2000, 2010, 2015, 2019) shows that the strong correlates are temporally stable, with one indicator — unintentional poisoning mortality — strengthening materially over time (r = −0.62 in 2000 → r = −0.79 in 2015). Longitudinal coverage is limited for several indicators (UHC, handwashing, and other WASH measures lack 2019 data in the dump). (iii) Regressing life expectancy on basic handwashing access while controlling for log GDP per capita (PPP), urbanization, and school life expectancy yields β_handwash = +0.126 years per percentage-point (SE = 0.035, p ≈ 0.001) on the n = 38 country sample with complete covariates. Handwashing's partial R² conditional on the development covariates is 0.286, supporting the original paper's conjecture that basic handwashing carries independent explanatory power beyond what national-development proxies already capture.
+This companion report implements the three follow-up studies proposed in §5 of the primary visual data report. (i) A Spearman / LOWESS sensitivity check confirms that the nine strong Pearson correlates (|r| ≥ 0.70) are robust to the linearity assumption, but flags two indicators — neglected tropical diseases (NTD) and nurses-and-midwives density — whose rank correlations with life expectancy are an order of magnitude larger than their Pearson counterparts, indicating substantial non-linearity that the original screen missed. (ii) Repeating the pairwise correlation analysis at four reference years (2000, 2010, 2015, 2019) shows that the strong correlates are temporally stable, with one indicator — unintentional poisoning mortality — strengthening materially over time (r = −0.62 in 2000 → r = −0.79 in 2015). Longitudinal coverage is limited for several indicators (UHC, handwashing, and other WASH measures lack 2019 data in the dump). (iii) Regressing life expectancy on basic handwashing access while controlling for log GDP per capita (PPP), urbanization, and school life expectancy yields β_handwash = +0.126 years per percentage-point (SE = 0.035, p ≈ 0.001) on the n = 38 country sample with complete covariates. Handwashing's partial R² conditional on the development covariates is 0.286, supporting the primary report's conjecture that basic handwashing carries independent explanatory power beyond what national-development proxies already capture.
 
 **Keywords:** Spearman correlation; LOWESS; longitudinal correlation; partial regression; World Bank Indicators; sensitivity analysis.
 
@@ -59,13 +59,13 @@ The strong correlates are robust to the choice of statistic. All nine retain |ρ
 
 The far more interesting findings sit in the moderate-to-weak band, where three indicators show |ρ − r| > 0.20:
 
-- **NTD (neglected tropical disease cases)**: Pearson r = −0.11 (negligible) but Spearman ρ = −0.69 (moderate, near strong). NTD case counts are highly skewed — a handful of countries report counts in the tens of millions — so the rank correlation captures a monotone relationship that the Pearson coefficient cannot. The original paper screened NTD out at |r| = 0.11; under a rank statistic, NTD is comparable to TB or HepB in strength.
+- **NTD (neglected tropical disease cases)**: Pearson r = −0.11 (negligible) but Spearman ρ = −0.69 (moderate, near strong). NTD case counts are highly skewed — a handful of countries report counts in the tens of millions — so the rank correlation captures a monotone relationship that the Pearson coefficient cannot. The primary report screened NTD out at |r| = 0.11; under a rank statistic, NTD is comparable to TB or HepB in strength.
 - **Nurses and midwives per 10,000 (`nursing_mid`)**: Pearson r = +0.18 (weak) vs Spearman ρ = +0.72 (strong). Same diagnosis: extreme right-skew in the workforce density distribution (most countries < 50, a few > 200 per 10,000) compresses the Pearson correlation.
 - **Skilled birth attendance (`birth_att_skilled`)**: r = +0.66 vs ρ = +0.39 — the only indicator where Spearman is smaller than Pearson by more than 0.05. The relationship has a ceiling at 100%, with many countries clustered near it; Pearson treats the linear stretch from 50–100% as more informative than its rank order does.
 
 ### 1.3 Interpretation
 
-The Pearson screen used in the primary paper is well-suited to the strong-correlate cluster — all nine strong indicators are also strong under Spearman, and LOWESS confirms monotonicity. However, the weak-band ranking should not be taken at face value: NTD and nursing-and-midwife density would both be candidates for follow-up if the screen were repeated with a rank statistic. This is consistent with the primary paper's stated limitation in §4.3 ("Pearson assumes linearity") and concretizes its practical consequence.
+The Pearson screen used in the primary report is well-suited to the strong-correlate cluster — all nine strong indicators are also strong under Spearman, and LOWESS confirms monotonicity. However, the weak-band ranking should not be taken at face value: NTD and nursing-and-midwife density would both be candidates for follow-up if the screen were repeated with a rank statistic. This is consistent with the primary report's stated limitation in §4.3 ("Pearson assumes linearity") and concretizes its practical consequence.
 
 **Figures.** [`figures/fig1_correlation_ranking.png`](figures/fig1_correlation_ranking.png) (bar chart of all 24 Pearson coefficients), [`figures/fig2_pearson_vs_spearman.png`](figures/fig2_pearson_vs_spearman.png) (scatter of Pearson r vs Spearman ρ), [`figures/fig3_lowess_strong_correlates.png`](figures/fig3_lowess_strong_correlates.png) (3 × 3 LOWESS grid for the strong correlates).
 
@@ -95,7 +95,7 @@ The pairwise correlation between life expectancy and each of the nine strong cor
 
 Three patterns stand out:
 
-1. **Infant/child mortality coefficients are essentially flat** across two decades. The under-five mortality coefficient drifts from −0.90 to −0.87, the infant mortality coefficient from −0.90 to −0.89. As discussed in the primary paper §4.1, this is mechanically expected: cross-country variation in life expectancy continues to be dominated by early-life mortality.
+1. **Infant/child mortality coefficients are essentially flat** across two decades. The under-five mortality coefficient drifts from −0.90 to −0.87, the infant mortality coefficient from −0.90 to −0.89. As discussed in the primary report §4.1, this is mechanically expected: cross-country variation in life expectancy continues to be dominated by early-life mortality.
 2. **Neonatal mortality strengthens** (r = −0.82 in 2000 → −0.88 in 2015–2019). One plausible reading: as the gap in post-neonatal mortality narrows globally, the surviving cross-country variation in life expectancy concentrates more in the first 28 days of life.
 3. **Unintentional poisoning mortality strengthens markedly**: r = −0.62 in 2000 → −0.77 in 2010 → −0.79 in 2015. The relationship became stronger over the period, possibly because countries that successfully reduced poisoning mortality were also the same countries that gained the most life-expectancy years.
 
@@ -113,7 +113,7 @@ For indicators with stable longitudinal coverage, the original cross-sectional f
 
 ### 3.1 Motivation
 
-The primary paper observed that handwashing access (r = +0.78) correlates almost as strongly with life expectancy as the Universal Health Coverage index (r = +0.87), despite requiring far less infrastructure. It asked: does handwashing access have independent explanatory power, or is it acting as a proxy for broader national development? The natural test is to regress life expectancy on handwashing access while controlling for indicators of development.
+The primary report observed that handwashing access (r = +0.78) correlates almost as strongly with life expectancy as the Universal Health Coverage index (r = +0.87), despite requiring far less infrastructure. It asked: does handwashing access have independent explanatory power, or is it acting as a proxy for broader national development? The natural test is to regress life expectancy on handwashing access while controlling for indicators of development.
 
 ### 3.2 Data and method
 
@@ -149,17 +149,17 @@ The partial R² of handwashing conditional on the development covariates is
 
 $$R^2_{\text{partial}} = \frac{R^2_{\text{full}} - R^2_{\text{reduced}}}{1 - R^2_{\text{reduced}}} = \frac{0.701 - 0.581}{1 - 0.581} = 0.286$$
 
-That is, **handwashing access explains roughly 29 % of the residual life-expectancy variance that the three development proxies leave unexplained.** This addresses the question posed by the primary paper directly: handwashing is not merely a development proxy in this sample.
+That is, **handwashing access explains roughly 29 % of the residual life-expectancy variance that the three development proxies leave unexplained.** This addresses the question posed by the primary report directly: handwashing is not merely a development proxy in this sample.
 
 ### 3.4 Caveats
 
 - The sample is small (n = 38) because the intersection of WHO handwashing data, WB school life expectancy, and the other indicators is sparse for 2015. A more carefully assembled sample (e.g., imputing one missing covariate or using a different education metric like `SE.SEC.ENRR`) could double n.
 - The non-significance of the development covariates does not imply they don't matter — they are tightly correlated with each other and with handwashing, which spreads the explanatory weight across collinear predictors.
-- The regression is still cross-sectional and ecological. The §4.3 limitations of the primary paper (no causal claim, country-level inference only) carry over.
+- The regression is still cross-sectional and ecological. The §4.3 limitations of the primary report (no causal claim, country-level inference only) carry over.
 
 ### 3.5 Interpretation
 
-Subject to the small-sample caveat, this is the strongest evidence the dataset can offer for the primary paper's central conjecture: **basic handwashing access is associated with life expectancy beyond what is explained by national income, urbanization, and educational attainment**. The 0.126 year-per-percentage-point estimate also has a useful unit interpretation: a country moving from 30 % to 80 % basic handwashing coverage is predicted to gain ≈ 6.3 years of life expectancy, holding development covariates fixed.
+Subject to the small-sample caveat, this is the strongest evidence the dataset can offer for the primary report's central conjecture: **basic handwashing access is associated with life expectancy beyond what is explained by national income, urbanization, and educational attainment**. The 0.126 year-per-percentage-point estimate also has a useful unit interpretation: a country moving from 30 % to 80 % basic handwashing coverage is predicted to gain ≈ 6.3 years of life expectancy, holding development covariates fixed.
 
 **Figure.** [`figures/fig5_handwash_partial_regression.png`](figures/fig5_handwash_partial_regression.png).
 
@@ -173,7 +173,7 @@ Subject to the small-sample caveat, this is the strongest evidence the dataset c
 | §2 Longitudinal (2000–2019) | Strong correlates are temporally stable. **Unintentional poisoning mortality strengthens markedly (−0.62 → −0.79).** WASH/UHC coverage missing in 2019 dump | Medium — limited by data coverage |
 | §3 Handwashing multivariate | **β_handwash = +0.126 years/percentage-point survives WB controls (p ≈ 0.001, partial R² = 0.29)** | Medium — small n (38), but effect is significant |
 
-All three follow-ups support the primary paper's headline finding: **basic infrastructure and access indicators (UHC, WASH, clean fuel) are the strongest cross-country correlates of life expectancy in 2015**, and basic handwashing access in particular is not merely a development proxy. The most consequential surprise is §1's discovery that NTD and nursing-and-midwife density carry meaningful information that the Pearson screen suppressed — a worthwhile direction for any future analysis that re-screens the dataset with a rank statistic.
+All three follow-ups support the primary report's headline finding: **basic infrastructure and access indicators (UHC, WASH, clean fuel) are the strongest cross-country correlates of life expectancy in 2015**, and basic handwashing access in particular is not merely a development proxy. The most consequential surprise is §1's discovery that NTD and nursing-and-midwife density carry meaningful information that the Pearson screen suppressed — a worthwhile direction for any future analysis that re-screens the dataset with a rank statistic.
 
 ---
 
@@ -181,7 +181,7 @@ All three follow-ups support the primary paper's headline finding: **basic infra
 
 ```bash
 # 1. Re-download the raw Kaggle CSVs (already in csv_data/)
-# 2. Re-derive cleaned 2015 tables and verify Pearson r against the paper
+# 2. Re-derive cleaned 2015 tables and verify Pearson r against the report
 python verify_paper.py
 
 # 3. Run all three follow-up analyses; produces figures/ and followup_results/
@@ -196,7 +196,7 @@ The World Bank covariate fetch in §3 calls the public `api.worldbank.org` Indic
 
 ## References
 
-The references for the primary paper apply. Additional methods references:
+The references for the primary report apply. Additional methods references:
 
 Cleveland, W. S. (1979). Robust locally weighted regression and smoothing scatterplots. *Journal of the American Statistical Association*, 74(368), 829–836.
 
