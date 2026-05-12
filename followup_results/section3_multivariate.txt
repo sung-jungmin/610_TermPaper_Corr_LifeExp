@@ -1,0 +1,58 @@
+Bivariate: LifeExp ~ handwash
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                LifeExp   R-squared:                       0.633
+Model:                            OLS   Adj. R-squared:                  0.623
+Method:                 Least Squares   F-statistic:                     62.22
+Date:                Tue, 12 May 2026   Prob (F-statistic):           2.33e-09
+Time:                        02:17:50   Log-Likelihood:                -107.73
+No. Observations:                  38   AIC:                             219.5
+Df Residuals:                      36   BIC:                             222.7
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         58.9004      1.395     42.218      0.000      56.071      61.730
+handwash       0.1753      0.022      7.888      0.000       0.130       0.220
+==============================================================================
+Omnibus:                        1.144   Durbin-Watson:                   1.430
+Prob(Omnibus):                  0.564   Jarque-Bera (JB):                0.419
+Skew:                          -0.198   Prob(JB):                        0.811
+Kurtosis:                       3.328   Cond. No.                         128.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+Multivariate: LifeExp ~ handwash + log_gdp + urban_pct + school_yrs
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                LifeExp   R-squared:                       0.701
+Model:                            OLS   Adj. R-squared:                  0.665
+Method:                 Least Squares   F-statistic:                     19.36
+Date:                Tue, 12 May 2026   Prob (F-statistic):           2.78e-08
+Time:                        02:17:50   Log-Likelihood:                -103.85
+No. Observations:                  38   AIC:                             217.7
+Df Residuals:                      33   BIC:                             225.9
+Df Model:                           4                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         49.0214     10.036      4.884      0.000      28.603      69.440
+handwash       0.1264      0.035      3.636      0.001       0.056       0.197
+log_gdp        0.4387      1.522      0.288      0.775      -2.658       3.535
+urban_pct      0.0563      0.052      1.091      0.283      -0.049       0.161
+school_yrs     0.5212      0.398      1.311      0.199      -0.288       1.330
+==============================================================================
+Omnibus:                       11.239   Durbin-Watson:                   1.700
+Prob(Omnibus):                  0.004   Jarque-Bera (JB):               14.769
+Skew:                          -0.790   Prob(JB):                     0.000621
+Kurtosis:                       5.614   Cond. No.                     1.26e+03
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 1.26e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.

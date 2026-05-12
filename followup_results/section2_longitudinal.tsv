@@ -1,0 +1,37 @@
+year	variable	n	r
+2000	MR_infant_1y	161	-0.9013
+2000	MR_infant_5y	161	-0.9044
+2000	MR_infant_28d	182	-0.8238
+2000	UHC_Cov	0	
+2000	sanitation	175	0.8354
+2000	drinking_water	177	0.7998
+2000	clean_fuel_tech	179	0.8134
+2000	MR_Poison	183	-0.6233
+2000	handwash	9	0.8393
+2010	MR_infant_1y	162	-0.8865
+2010	MR_infant_5y	162	-0.8950
+2010	MR_infant_28d	182	-0.8281
+2010	UHC_Cov	0	
+2010	sanitation	182	0.8236
+2010	drinking_water	182	0.8098
+2010	clean_fuel_tech	179	0.7882
+2010	MR_Poison	183	-0.7723
+2010	handwash	65	0.7624
+2015	MR_infant_1y	162	-0.8960
+2015	MR_infant_5y	162	-0.8750
+2015	MR_infant_28d	182	-0.8717
+2015	UHC_Cov	183	0.8652
+2015	sanitation	183	0.8222
+2015	drinking_water	183	0.8145
+2015	clean_fuel_tech	179	0.7939
+2015	MR_Poison	183	-0.7878
+2015	handwash	89	0.7822
+2019	MR_infant_1y	162	-0.8925
+2019	MR_infant_5y	162	-0.8704
+2019	MR_infant_28d	182	-0.8759
+2019	UHC_Cov	0	
+2019	sanitation	0	
+2019	drinking_water	0	
+2019	clean_fuel_tech	0	
+2019	MR_Poison	0	
+2019	handwash	0	
