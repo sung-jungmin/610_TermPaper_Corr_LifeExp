@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Home
+title: Life Expectancy &amp; Global Health
 ---
 
 Cross-country correlation analysis of 24 WHO health indicators against
